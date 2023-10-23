@@ -58,18 +58,20 @@ while True:
         # Saída
         print(f'\n{v1} x {v2} = {total}\n')
 
-    elif op== 4:
+    elif op == 4:
         print('\nDivisão\n')
 
         # Entrada
         v1 = int(input('Informe o valor 1: '))
         v2 = int(input('Informe o valor 2: '))
-
-        # Processamento
-        total = div(v1, v2)
+        if v2 == 0:
+            print('Não é possível dividir por 0')
+        else:
+            # Processamento
+            total = div(v1, v2)
+            print(f'A divisão desses número será {total}')
 
         # Saída
-        print(f'\n{v1} / {v2} = {total}\n')
 
     elif op == 5:
         print('\n\n\tOpção escolhida: EXPONENCIAÇÃO')
