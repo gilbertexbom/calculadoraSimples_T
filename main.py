@@ -1,4 +1,4 @@
-from calculadora import soma, sub, mult, div, exp
+from calculadora import soma, sub, mult, div, rad, exp
 from time import sleep
 
 
@@ -14,7 +14,8 @@ while True:
     print('3. Multiplicação')
     print('4. Divisão')
     print('5. Exponenciação')
-    print('6. Sair')
+    print('6. Radiciação')
+    print('7. Sair')
 
     # Ler a opção de escolha do usuário
     op = int(input('\n\tOpção: '))
@@ -77,6 +78,15 @@ while True:
         print(f'O valor da operação de {v1:.2f} elevado a {v2:.2f} é igual a {exp(v1,v2)}')
 
     elif op == 6:
+        print('\n\n\tRadiciação')
+        v1 = int(input('Informe o valor 1: '))
+        v2 = int(input('Informe o valor 2: '))
+
+        total = rad(v1, v2)
+
+        print(f'\n{v1} ** {v2} = {total}\n')
+
+    elif op == 7:
         #Sair do sistema
         print('\nForte abraço e obrigado pela preferência!!\n')
         break
