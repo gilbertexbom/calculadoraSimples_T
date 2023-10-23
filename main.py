@@ -1,7 +1,8 @@
-from calculadora import soma, sub, mult, div
+from calculadora import soma, sub, mult, div, exp
+from time import sleep
 
 
-# Implementação da calculadora simples
+#  Implementação da calculadora simples
 
 while True:
     # Apresentação
@@ -12,7 +13,8 @@ while True:
     print('2. Subtração')
     print('3. Multiplicação')
     print('4. Divisão')
-    print('5. Sair')
+    print('5. Exponenciação')
+    print('6. Sair')
 
     # Ler a opção de escolha do usuário
     op = int(input('\n\tOpção: '))
@@ -69,9 +71,27 @@ while True:
         print(f'\n{v1} / {v2} = {total}\n')
 
     elif op == 5:
+        print('\n\n\tOpção escolhida: EXPONENCIAÇÃO')
+        v1 = float(input('Insira o valor da base: '))
+        v2 = float(input('Insira o valor do expoente: '))
+        print(f'O valor da operação de {v1:.2f} elevado a {v2:.2f} é igual a {exp(v1,v2)}')
+
+    elif op == 6:
         #Sair do sistema
         print('\nForte abraço e obrigado pela preferência!!\n')
         break
+
     else:
         #Tratamento de exceção
         print(f'\nOpção {op} incorreta!\n')
+
+    stop = input('Deseja realizar outra operação? (Y/N) ').upper().strip()
+    match stop:
+        case 'Y':
+            print('Sistema reiniciando, aguarde...')
+            sleep(3)
+            print('\n\n\n\t Sistema reiniciado!')
+
+        case 'N':
+            print('Forte abraço e obrigado pela preferência!!')
+            break
